@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Contact } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
+
 const ContactSection = () => {
   const {
     toast
@@ -59,7 +60,7 @@ const ContactSection = () => {
                   <strong>Phone:</strong> +212 539 351 274
                 </p>
                 <p className="text-gray-700">
-                  <strong>Email:</strong> info@espatex.com
+                  <strong>Email:</strong> info@espatex.biz
                 </p>
               </div>
               
@@ -83,4 +84,5 @@ const ContactSection = () => {
       </div>
     </section>;
 };
+
 export default ContactSection;
