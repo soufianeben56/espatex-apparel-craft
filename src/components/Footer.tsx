@@ -1,18 +1,12 @@
-
 import React from 'react';
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
-  return (
-    <footer className="bg-espatex-dark text-white py-8">
+  return <footer className="bg-espatex-dark text-white py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <div className="font-bold text-2xl mb-2">ESPATEX</div>
-            <p className="text-sm text-gray-300">
-              Excellence in apparel manufacturing since 1997
-            </p>
+            <p className="text-sm text-gray-300">Excellence in apparel manufacturing since 1996</p>
           </div>
           
           <div className="text-center md:text-right">
@@ -28,8 +22,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;

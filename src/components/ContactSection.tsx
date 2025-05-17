@@ -1,37 +1,37 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Contact } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
-
 const ContactSection = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
+    const {
+      name,
+      value
+    } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // In a real application, this would send the form data to a server
     console.log('Form submitted:', formData);
-    
     toast({
       title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you soon.",
+      description: "Thank you for contacting us. We'll get back to you soon."
     });
-    
+
     // Reset form
     setFormData({
       name: '',
@@ -39,9 +39,7 @@ const ContactSection = () => {
       message: ''
     });
   };
-
-  return (
-    <section id="contact" className="bg-white section-padding">
+  return <section id="contact" className="bg-white section-padding">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-espatex-dark mb-12 text-center">Contact Us</h2>
         
@@ -67,41 +65,15 @@ const ContactSection = () => {
               
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <Input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full"
-                  />
+                  <Input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required className="w-full" />
                 </div>
                 <div>
-                  <Input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full"
-                  />
+                  <Input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required className="w-full" />
                 </div>
                 <div>
-                  <Textarea
-                    name="message"
-                    placeholder="Your Message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    className="w-full h-32"
-                  />
+                  <Textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleChange} required className="w-full h-32" />
                 </div>
-                <Button 
-                  type="submit" 
-                  className="w-full bg-espatex-dark hover:bg-opacity-90 text-white"
-                >
+                <Button type="submit" className="w-full bg-espatex-dark hover:bg-opacity-90 text-white">
                   Send Message
                 </Button>
               </form>
@@ -109,8 +81,6 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactSection;
